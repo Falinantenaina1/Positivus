@@ -29,17 +29,17 @@ a {
     text-decoration: none;
 }
 
-.container {
-    padding: 10px 20px;
-    margin: 0 auto;
-}
-
 .header {
+    background: var(--white);
     position: relative;
     width: 100%;
-    padding: 20px 0;
+    margin: 0 auto;
+    padding: 30px 20px;
 }
 
+.logo {
+    width: 144px;
+}
 .logo > img{
     width: 144px;
 }
@@ -54,8 +54,7 @@ a {
     overflow: hidden;
     cursor: pointer;
     transition: all .5s;
-    background: url("./assets/icon/xmark-solid.svg");
-    background-size: 27px 27.5px;
+    background: url("./assets/icon/xmark-solid.svg") no-repeat;
 }
 
 #navbar-button.close {
@@ -64,27 +63,75 @@ a {
 
 #navbar {
     transition: transform .5s;
-    position: absolute;
-    width: 100%;
-    margin-left: -20px;
     transform: translateY(-300px);
     z-index: 1;
 }
 
 #navbar.show-menu {
     transform: translateY(5px);
-    padding: 20px;
-    height: 100vh;
-    gap: 30px;
 }
 
-#navbar > ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+
+        /*LARGE SCREEN*/
+
+@media screen and (min-width: 1024px) {
+    body {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .container {
+        padding: 0 100px;
+    }
+
+    .header {
+        padding: 20px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #navbar-button {
+        display: none;
+    }
+
+    #navbar {
+        transition: none;
+        position: relative;
+        transform: none;
+        margin: 0;
+    }
+
+    #navbar > ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    nav > ul > li {
+        margin: 0 20px;
+    }
+
+    .nav-link.btn {
+        padding: 10px 20px;
+        border: 1px solid var(--bg-dark);
+        border-radius: 10px;
+    }
 }
 
-.nav-link {
-    margin-top: 10px;
+@media screen and (min-width: 1128px) {
+    body {
+        font-size: 20px;
+    }
+
+    .header {
+        padding: 30px 60px;
+
+    }
+
+    .logo > img{
+        width: 219.54px;
+    }
+
 }
