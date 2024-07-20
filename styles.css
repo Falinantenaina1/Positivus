@@ -41,7 +41,7 @@ a {
     width: 144px;
 }
 .logo > img{
-    width: 144px;
+    width: 100%;
 }
 
 #navbar-button {
@@ -62,15 +62,26 @@ a {
 }
 
 #navbar {
+    position: absolute;
+    background: var(--white);
+    width: 100vw;
     transition: transform .5s;
     transform: translateY(-300px);
     z-index: 1;
 }
 
 #navbar.show-menu {
+    background: var(--bg-primary);
+    display: flex;
+    justify-content: center;
     transform: translateY(5px);
+    height: 100vh;
+    text-align: center;
+    font-size: 20px;
+    line-height: 28px;
+    margin-left: -20px;
+    padding-top: 30px;
 }
-
 
         /*LARGE SCREEN*/
 
@@ -127,11 +138,10 @@ a {
 
     .header {
         padding: 30px 60px;
-
     }
 
-    .logo > img{
-        width: 219.54px;
+    .logo {
+        width: 250px;
     }
 
 }
