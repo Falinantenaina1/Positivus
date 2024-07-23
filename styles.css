@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("./assets/font/spaceGrotesk.ttf");
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +17,7 @@
 }
 body {
     background-color: var(--white);
-    font-family: "Font Grotest", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -29,12 +34,14 @@ a {
     text-decoration: none;
 }
 
+            /* *** *** HEADER  **** *** */
+
 .header {
     background: var(--white);
     position: relative;
     width: 100%;
     margin: 0 auto;
-    padding: 30px 20px;
+    padding: 20px 20px;
 }
 
 .logo {
@@ -46,7 +53,7 @@ a {
 
 #navbar-button {
     position: absolute;
-    top: 30px;
+    top: 20px;
     right: 20px;
     font-size: 20px;
     width: 24px;
@@ -71,7 +78,7 @@ a {
 }
 
 #navbar.show-menu {
-    background: var(--bg-primary);
+    background: var(--white);
     display: flex;
     justify-content: center;
     transform: translateY(5px);
@@ -81,18 +88,60 @@ a {
     line-height: 28px;
     margin-left: -20px;
     padding-top: 30px;
+    overflow: auto;
 }
 
-        /*LARGE SCREEN*/
+            /* *** *** ABOUT *** *** */
+section {
+    padding: 10px 20px;
+}
+
+h1 {
+    font-size: 2.68rem;
+    line-height: 40px;
+    font-weight: 500;
+}
+
+.megaphone {
+    display: block;
+    width: 90%;
+    margin-top: 10px;
+}
+
+.description {
+    margin: 20px 0 40px;
+}
+
+.btn {
+    display: block;
+    background: var(--bg-dark);
+    font-size: 1.25rem;
+    color: var(--white);
+    text-align: center;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.reference {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 60px 0 40px;
+    gap: 5px;
+}
+
+.reference a {
+    width: 25%;
+}
+
+.reference a > img {
+    width: 100%;
+}
 
 @media screen and (min-width: 1024px) {
     body {
         font-size: 18px;
         line-height: 28px;
-    }
-
-    .container {
-        padding: 0 100px;
     }
 
     .header {
@@ -124,12 +173,44 @@ a {
         margin: 0 20px;
     }
 
-    .nav-link.btn {
+    .nav-link.border {
         padding: 10px 20px;
         border: 1px solid var(--bg-dark);
         border-radius: 10px;
     }
+
+    section {
+        padding: 20px 50px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 450px auto;
+        grid-template-areas: 
+        "a d"
+        "b d"
+        "c c";
+    }
+
+    .main-title {
+        align-self: end;
+        grid-area: a;
+    }
+
+    .megaphone {
+        grid-area: d;
+    }
+
+    .reference {
+        grid-area: c;
+    }
+
+    .reference a {
+        width: 124px;
+    }
 }
+
+    /*LARGE SCREEN*/
 
 @media screen and (min-width: 1128px) {
     body {
@@ -143,5 +224,8 @@ a {
     .logo {
         width: 250px;
     }
+
+
+
 
 }
